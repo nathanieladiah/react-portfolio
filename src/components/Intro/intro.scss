@@ -1,0 +1,83 @@
+@use "../../sass/abstracts/" as abs;
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: abs.rem(22);
+  grid-area: intro;
+
+  @include abs.breakpoint(medium) {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 1.5rem;
+  }
+
+  @include abs.breakpoint(large) {
+    grid-template-columns: 1fr 4fr;
+  }
+
+  &__image {
+    background-image: url(../../assets/img/headshot.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    aspect-ratio: 315 / 345;
+    border-radius: 1rem;
+
+    @include abs.breakpoint(medium) {
+      align-self: center;
+      aspect-ratio: 1600 / 1750;
+    }
+  }
+
+  &Text {
+    display: flex;
+    flex-direction: column;
+    gap: abs.rem(34);
+
+    @include abs.breakpoint(large) {
+      gap: abs.rem(37);
+    }
+
+    &__top {
+      display: flex;
+      flex-direction: column;
+      gap: abs.rem(30);
+      color: var(--clr-dark-gray);
+
+      @include abs.breakpoint(large) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    &__name {
+      font-weight: 600;
+      font-size: abs.rem(24);
+    }
+
+    &__title {
+      color: var(--clr-medium);
+      font-weight: 500;
+      font-size: abs.rem(18);
+    }
+
+    &__info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: abs.rem(18);
+
+      i {
+        font-size: abs.rem(20);
+      }
+    }
+
+    &__main {
+      @include abs.breakpoint(large) {
+        width: 75%;
+      }
+    }
+  }
+}

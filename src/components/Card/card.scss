@@ -1,0 +1,31 @@
+@use "../../sass/abstracts/" as abs;
+
+.card {
+  background-color: white;
+  border-radius: 1rem;
+  padding: abs.rem(22);
+
+  overflow: hidden;
+
+  &__header {
+    color: var(--clr-dark-gray);
+    font-weight: 500;
+    font-size: abs.rem(24);
+  }
+
+  &__button {
+    background-color: var(--clr-blue);
+    color: var(--clear-light);
+    border-radius: abs.rem(12);
+    padding: abs.rem(8) abs.rem(30);
+    border: none;
+    font-size: abs.rem(18);
+    font-weight: 400;
+
+    &--ghost {
+      background-color: transparent;
+      border: 1px solid vr(--clr-blue);
+      color: var(--clr-blue);
+    }
+  }
+}
