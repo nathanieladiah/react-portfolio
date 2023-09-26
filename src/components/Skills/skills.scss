@@ -1,0 +1,20 @@
+@use "../../sass/abstracts/" as abs;
+
+.skills {
+  grid-area: skills;
+
+  &__container {
+    padding-left: 10%;
+    display: flex;
+    gap: 30%;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+
+    &--item {
+      color: var(--clr-dark);
+    }
+  }
+}
