@@ -1,4 +1,4 @@
-import Card from "./components/Card/Card";
+import Card from "./components/Generic/Card/Card";
 import Intro from "./components/Intro/Intro";
 
 const App = () => {

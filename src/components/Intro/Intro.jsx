@@ -1,5 +1,5 @@
 import { FaEnvelope, FaPhone } from "react-icons/fa";
-import Card from "../Card/Card";
+import Card from "../Generic/Card/Card";
 import "./intro.scss";
 
 const Intro = () => {
