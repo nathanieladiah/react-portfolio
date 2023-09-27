@@ -1,0 +1,28 @@
+@use "../../sass/abstracts/" as abs;
+
+.projectBar {
+  grid-area: projectBar;
+
+  &__selections {
+    margin-top: 1rem;
+    // overflow-x: scroll;
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__button {
+    border-radius: abs.rem(12);
+    border: 1px solid var(--clr-dark-gray);
+    padding: 0.5rem abs.rem(22);
+    background-color: transparent;
+    color: var(--clr-dark-gray);
+    font-weight: 500;
+    font-size: abs.rem(14);
+
+    &--active {
+      background-color: var(--clr-blue);
+      border-color: var(--clr-blue);
+      color: white;
+    }
+  }
+}
