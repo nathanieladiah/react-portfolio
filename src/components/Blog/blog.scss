@@ -1,0 +1,86 @@
+@use "../../sass/abstracts/" as abs;
+
+.blog {
+  grid-area: blog;
+
+  .body {
+    display: flex;
+    flex-direction: column;
+
+    @include abs.breakpoint(medium) {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      grid-template-rows: 1fr;
+      grid-auto-rows: minmax(100px, auto);
+      grid-template-areas:
+        "blogTitle blogImage"
+        "blogBlurb blogImage"
+        "blogLink  .........";
+      row-gap: 2rem;
+    }
+
+    @include abs.breakpoint(xlarge) {
+      grid-template-areas:
+        "blogTitle blogImage"
+        "......... blogImage"
+        "blogBlurb blogBlurb"
+        "blogLink  .........";
+    }
+  }
+
+  &__title {
+    color: var(--clr-dark);
+    font-size: abs.rem(24);
+    font-weight: 500;
+    margin-top: abs.rem(18);
+
+    order: 2;
+    grid-area: blogTitle;
+  }
+
+  &__image {
+    order: 1;
+    grid-area: blogImage;
+    margin-top: 1rem;
+
+    @include abs.breakpoint(medium) {
+      position: relative;
+      margin-top: 0;
+    }
+
+    img {
+      border-radius: 1rem;
+
+      @include abs.breakpoint(medium) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        position: relative;
+        left: abs.rem(22);
+      }
+    }
+  }
+
+  &__blurb {
+    order: 3;
+    grid-area: blogBlurb;
+    margin-top: abs.rem(35);
+    font-size: 1rem;
+    font-weight: 500;
+
+    @include abs.breakpoint(medium) {
+      margin-top: 0;
+    }
+  }
+
+  &__link {
+    order: 4;
+    grid-area: blogLink;
+    margin-top: abs.rem(28);
+    color: var(--clr-blue);
+    text-decoration: none;
+
+    @include abs.breakpoint(medium) {
+      margin-top: 0;
+    }
+  }
+}

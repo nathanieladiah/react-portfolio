@@ -1,3 +1,4 @@
+import Blog from "./components/Blog/Blog";
 import Intro from "./components/Intro/Intro";
 import Skills from "./components/Skills/Skills";
 
@@ -6,6 +7,7 @@ const App = () => {
     <>
       <Intro />
       <Skills />
+      <Blog />
     </>
   );
 };
