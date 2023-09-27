@@ -73,7 +73,8 @@ body {
     max-width: 1300px;
     display: grid;
     grid-template-columns: 2fr 3fr;
-    grid-template-rows: repeat(6, min-content);
+    // grid-template-rows: repeat(6, min-content);
+    grid-template-rows: auto auto 2fr 3fr auto auto;
     // grid-auto-rows: minmax(100px, auto);
     grid-template-areas:
       "intro      intro"
