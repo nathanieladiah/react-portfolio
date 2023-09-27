@@ -4,7 +4,7 @@ import "./card.scss";
 const Card = ({ children, className = "", header = "" }) => {
   return (
     <div className={`card ${className}`}>
-      <h3 className="card__header">{header}</h3>
+      {header !== "" && <h3 className="card__header">{header}</h3>}
       {children}
     </div>
   );
