@@ -1,0 +1,67 @@
+@use "../../sass/abstracts/" as abs;
+
+.project {
+  display: flex;
+  flex-direction: column;
+
+  // Do this
+  &:nth-last-child(1) {
+    @include abs.breakpoint(medium) {
+      display: none;
+    }
+
+    @include abs.breakpoint(xlarge) {
+      display: flex;
+    }
+  }
+
+  //   &--third {
+  //     @include abs.breakpoint(medium) {
+  //       display: none;
+  //     }
+
+  //     @include abs.breakpoint(xlarge) {
+  //       display: flex;
+  //     }
+  //   }
+
+  &__image {
+    img {
+      aspect-ratio: 292 / 217;
+      width: 100%;
+      border-radius: 12px;
+    }
+  }
+
+  &__tags {
+    margin-top: abs.rem(24);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    span {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--clr-dark-gray);
+    }
+  }
+
+  &__title {
+    margin-top: abs.rem(22);
+    color: var(--clr-dark-gray);
+    font-weight: 500;
+    font-size: abs.rem(24);
+  }
+
+  &__description {
+    margin-top: abs.rem(18);
+    color: var(--clr-medium);
+    font-size: 1rem;
+  }
+
+  &__actions {
+    margin-top: abs.rem(40);
+    display: flex;
+    gap: abs.rem(11);
+  }
+}

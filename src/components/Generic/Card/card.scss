@@ -16,7 +16,7 @@
 
   &__button {
     background-color: var(--clr-blue);
-    color: var(--clear-light);
+    color: var(--clr-light);
     border-radius: abs.rem(12);
     padding: abs.rem(8) abs.rem(30);
     border: none;
@@ -25,7 +25,7 @@
 
     &--ghost {
       background-color: transparent;
-      border: 1px solid vr(--clr-blue);
+      border: 1px solid var(--clr-blue);
       color: var(--clr-blue);
     }
   }
