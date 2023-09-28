@@ -3,18 +3,37 @@
 .skills {
   grid-area: skills;
 
-  &__container {
-    padding-left: 10%;
-    display: flex;
-    gap: 30%;
-  }
+  // &__container {
+  //   padding-left: 10%;
+  //   display: flex;
+  //   gap: 30%;
+  // }
 
+  // &__list {
+  //   list-style: none;
+  //   padding: 0;
+
+  //   &--item {
+  //     color: var(--clr-dark);
+  //   }
+  // }
   &__list {
     list-style: none;
+    display: grid;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
     padding: 0;
+
+    @include abs.breakpoint(medium) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
 
     &--item {
       color: var(--clr-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
     }
   }
 }
