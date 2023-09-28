@@ -12,19 +12,20 @@ const Blog = () => {
         </div>
         <div className="blog__blurb">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-            deleniti at repellat nihil odio quisquam natus sed omnis? Officia
-            dicta perferendis quos architecto nisi eligendi.
+            This is how I structure my styles for any of my projects. Shout out
+            to Kevin Powell on YouTube, which is where I got this layout.
           </p>
           <br />
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Voluptatibus porro repudiandae eveniet perferendis! Eius, aut quia
-            commodi accusamus quae id!
+            First off, I actually use SASS for my website styles rather than
+            plain CSS...
           </p>
         </div>
-        <a href="#" className="blog__link">
-          dev.to
+        <a
+          href="https://first-time-dev.blogspot.com/2023/09/how-to-organize-your-css.html"
+          className="blog__link"
+        >
+          first-time-dev.blogspot
         </a>
       </div>
     </Card>
