@@ -23,7 +23,9 @@ const Blog = () => {
         </div>
         <a
           href="https://first-time-dev.blogspot.com/2023/09/how-to-organize-your-css.html"
+          target="_blank"
           className="blog__link"
+          rel="noreferrer"
         >
           first-time-dev.blogspot
         </a>
