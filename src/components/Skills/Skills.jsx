@@ -1,5 +1,6 @@
 import { BiLogoDjango, BiLogoMongodb, BiLogoNodejs } from "react-icons/bi";
 import { DiCss3, DiJavascript1, DiPython, DiReact } from "react-icons/di";
+import { SiExpress } from "react-icons/si";
 import Card from "../Generic/Card/Card";
 import "./skills.scss";
 
@@ -27,7 +28,7 @@ const Skills = () => {
     },
     {
       name: "Express",
-      icon: null,
+      icon: <SiExpress />,
     },
     {
       name: "node.js",
