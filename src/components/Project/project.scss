@@ -63,5 +63,9 @@
     margin-top: abs.rem(40);
     display: flex;
     gap: abs.rem(11);
+
+    a {
+      text-decoration: none;
+    }
   }
 }
