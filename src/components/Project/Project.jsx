@@ -1,21 +1,9 @@
 import PropTypes from "prop-types";
-import projectImg from "../../assets/img/blog.png";
 import Card from "../Generic/Card/Card";
 import "./project.scss";
 
-const Project = ({ title }) => {
-  const projectData = {
-    projectTitle: title,
-    img: projectImg,
-    tags: ["HTML", "CSS", "responsive"],
-    description:
-      "In this project, I work with HTML and CSS to create a responsive page. This page is similar with a page. The design is from devchallenge.io",
-    demoLink: null,
-    githubLink: "https://github.com/nathanieladiah/blogs",
-  };
-
-  const { projectTitle, img, tags, description, demoLink, githubLink } =
-    projectData;
+const Project = ({ data }) => {
+  const { projectTitle, img, tags, description, demoLink, githubLink } = data;
 
   return (
     <Card className="project">
@@ -57,6 +45,6 @@ const Project = ({ title }) => {
 };
 
 Project.propTypes = {
-  title: PropTypes.string,
+  data: PropTypes.object,
 };
 export default Project;

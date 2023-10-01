@@ -44,7 +44,10 @@ body {
   min-height: 100vh;
 
   display: flex;
-  flex-direction: column;
+
+  @include abs.breakpoint(xlarge) {
+    justify-content: center;
+  }
 
   // Using aic, causes the padding to not work on smaller screens
   // investigate further.
