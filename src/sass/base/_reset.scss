@@ -39,13 +39,16 @@ body {
   font-size: var(--fs-400);
   font-weight: 500;
   background-color: var(--clr-gray);
-  // background-color: hsla(0, 0%, 95%, 1);
   color: var(--clr-medium);
   line-height: 1.5;
   min-height: 100vh;
+
   display: flex;
   flex-direction: column;
-  align-items: center;
+
+  // Using aic, causes the padding to not work on smaller screens
+  // investigate further.
+  // align-items: center;
 
   // overflow-x: hidden;
 
@@ -68,7 +71,6 @@ body {
   }
 
   @include abs.breakpoint(xlarge) {
-    // padding-inline: 15%;
     width: 75%;
     max-width: 1300px;
     display: grid;
