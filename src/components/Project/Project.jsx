@@ -3,7 +3,7 @@ import Card from "../Generic/Card/Card";
 import "./project.scss";
 
 const Project = ({ data }) => {
-  const { projectTitle, img, tags, description, demoLink, githubLink } = data;
+  const { title, img, tags, description, demoLink, githubLink } = data;
 
   return (
     <Card className="project">
@@ -15,7 +15,7 @@ const Project = ({ data }) => {
           <span key={tag}>#{tag}</span>
         ))}
       </div>
-      <h4 className="project__title">{projectTitle}</h4>
+      <h4 className="project__title">{title}</h4>
       <p className="project__description">{description}</p>
       <div className="project__actions">
         {/* <button className="card__button">Demo</button>

@@ -1,49 +1,63 @@
-import projectImg from "../../assets/img/blog.png";
+import { collection, getDocs } from "firebase/firestore";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { db } from "../../firebase.config";
 import Project from "../Project/Project";
 import "./projects.scss";
 
 const Projects = () => {
-  const projectsList = [
-    {
-      projectTitle: "Blog",
-      img: projectImg,
-      tags: ["HTML", "CSS", "responsive"],
-      description:
-        "In this project, I work with HTML and CSS to create a responsive page. This page is similar with a page. The design is from devchallenge.io",
-      demoLink: null,
-      githubLink: "https://github.com/nathanieladiah/blogs",
-      id: 1,
-    },
-    {
-      projectTitle: "Blog",
-      img: projectImg,
-      tags: ["HTML", "CSS", "responsive"],
-      description:
-        "In this project, I work with HTML and CSS to create a responsive page. This page is similar with a page. The design is from devchallenge.io",
-      demoLink: null,
-      githubLink: "https://github.com/nathanieladiah/blogs",
-      id: 1,
-    },
-    {
-      projectTitle: "Blog",
-      img: projectImg,
-      tags: ["HTML", "CSS", "responsive"],
-      description:
-        "In this project, I work with HTML and CSS to create a responsive page. This page is similar with a page. The design is from devchallenge.io",
-      demoLink: null,
-      githubLink: "https://github.com/nathanieladiah/blogs",
-      id: 1,
-    },
-  ];
+  const [projects, setProjects] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  const params = useParams();
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        // Get reference
+        // const projectsRef = collection(db, "listings");
+
+        // Create a query
+        // const q = query(
+        //   projectsRef,
+        //   where("tags", "array-contains", params.categoryName),
+        //   limit(3)
+        // );
+
+        // Execute query
+        // const querySnap = await getDocs(q);
+        const querySnap = await getDocs(collection(db, "projects"));
+
+        const projects = [];
+        querySnap.forEach((doc) => {
+          return projects.push({
+            id: doc.id,
+            ...doc.data(),
+          });
+        });
+
+        setProjects(projects);
+        setLoading(false);
+      } catch (error) {
+        alert("Could not fetch projects");
+      }
+    };
+
+    fetchProjects();
+  }, [params.categoryName]);
+
   return (
     <section className="projects">
-      {/* <Project title="Blog" />
-      <Project title="Material Design System" />
-      <Project title="Home theater shop" /> */}
-
-      {projectsList.map((project) => (
-        <Project key={project.id} data={project} />
-      ))}
+      {loading ? (
+        <>Loading...</>
+      ) : projects && projects.length > 0 ? (
+        projects.map((project) => {
+          console.log(project);
+          return <Project key={project.id} data={project} />;
+        })
+      ) : (
+        <p>No projects</p>
+      )}
     </section>
   );
 };
