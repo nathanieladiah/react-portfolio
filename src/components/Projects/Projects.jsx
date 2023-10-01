@@ -44,7 +44,7 @@ const Projects = () => {
     };
 
     fetchProjects();
-  }, [params.categoryName]);
+  }, []);
 
   return (
     <section className="projects">
